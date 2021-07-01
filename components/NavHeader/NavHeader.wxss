@@ -1,0 +1,13 @@
+@import "/app.wxss";
+.title{
+  color:#666;
+}
+.titleSub{
+  font-size:32rpx;
+}
+.more{
+  border:1px solid #333;
+  border-radius:30rpx;
+  padding:5rpx 10rpx;
+  font-size: 24rpx;
+}

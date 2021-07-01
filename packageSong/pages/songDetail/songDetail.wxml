@@ -1,0 +1,28 @@
+<view class="song_detail flex">
+  <view class="author">{{song.ar[0].name}}</view>
+  <view class="circle"></view>
+  <image class="needle {{isPlay && 'needleRotate'}}" src="/static/images/song/needle.png"></image>
+
+  <view class="disc_container {{isPlay && 'disc_animation'}}">
+    <image class="disc" src="/static/images/song/disc.png"></image>
+    <image class="music_img" src="{{song.al.picUrl}}"></image>
+  </view>
+  <!-- 进度条控制 -->
+  <view class="music_progress flex">
+    <text>{{currentTime}}</text>
+    <view class="music_bar">
+      <view class="music_bar_persent" style="width:{{currentWidth+'rpx'}}">
+        <view class="music_bar_circle"></view>
+      </view>
+    </view>
+    <text>{{durationTime}}</text>
+  </view>
+  <!-- 底部播放控制 -->
+  <view class="music_control flex">
+    <text class="iconfont icon-xunhuan"></text>
+    <text class="iconfont icon-shangyishou" bindtap="handleSwitch" id="pre"></text>
+    <text class="iconfont play {{isPlay ? 'icon-zanting' : 'icon-bofang'}}" bindtap="handleMusicPlay"></text>
+    <text class="iconfont icon-xiayishou" bindtap="handleSwitch" id="next"></text>
+    <text class="iconfont icon-yinpinliebiao"></text>
+  </view>
+</view>

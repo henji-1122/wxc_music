@@ -1,0 +1,76 @@
+/* pages/recommendSong/recommendSong.wxss */
+.recommend_header {
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+
+.recommend_header image {
+  width: 100%;
+  height: 300rpx;
+}
+
+.recommend_date {
+  width: 300rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  left: 250rpx;
+  top: 140rpx;
+}
+
+/* list */
+.list {
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  position: relative;
+  margin-top: -20rpx;
+}
+
+.list_header {
+  margin-bottom: 20rpx;
+}
+
+.list_scroll {
+  height: calc(100vh - 375rpx)
+}
+
+.scroll_item {
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.scroll_item_info {
+  flex: 1
+}
+
+.scroll_item_info text {
+  display: block;
+  max-width: 500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.scroll_item image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}
+
+.scroll_item .iconfont {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+  color: #888;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

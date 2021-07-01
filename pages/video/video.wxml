@@ -1,0 +1,73 @@
+
+<view class="videoContainer">
+  <!-- 头部 -->
+  <view class="header flex">
+    <image src="/static/images/video/video.jpg"></image>
+    <view class="search"  bindtap="toSearch">搜素音乐</view>
+    <image src="/static/images/logo.png"></image>
+  </view>
+  <!-- 导航 -->
+  <scroll-view 
+  class="nav_scroll flex" 
+  scroll-x 
+  enable-flex
+  scroll-into-view="{{'scroll' + navId}}"
+  scroll-with-animation
+  > 
+    <view id="{{'scroll'+ item.id}}" class="nav_item" wx:for="{{videoGroutList}}" wx:key="id">
+      <view class="{{item.id === navId ? 'active' : ''}}" bindtap="changeNav" id="{{item.id}}" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 视频列表 -->
+  <scroll-view 
+    class="video_scroll" 
+    scroll-y
+    refresher-enabled
+    bindrefresherrefresh="handleRefresher"
+    refresher-triggered="{{isTriggered}}"
+    bindscrolltolower="handleToLower" 
+  >
+    <view class="video_scroll_item" wx:for="{{videoList}}" wx:key="id">
+      <video 
+        src="{{item.data.urlInfo.url}}" 
+        bindplay="handlePlay" 
+        id="{{item.data.vid}}"
+        poster="{{item.data.coverUrl}}"
+        class="video_common"
+        object-fit="fill"
+        wx:if="{{item.data.vid === videoId}}"
+        bindtimeupdate="handleTimeUpdate"
+        bindended="handleEnd"
+      ></video>
+      <image 
+        wx:else
+        src="{{item.data.coverUrl}}" 
+        class="video_common"
+        id="{{item.data.vid}}"
+        bindtap="handlePlay" 
+      ></image>
+      <view class="video_scroll_title">{{item.data.title}}</view>
+      <view class="video_scroll_footer flex">
+        <view>
+          <image class="video_avatar" src="{{item.data.creator.avatarUrl}}"></image>
+          <text class="video_nickname">{{item.data.creator.nickname}}</text>
+        </view>
+        <view class="video_comments flex">
+          <text class="item">
+            <text class="iconfont icon-shoucang"></text>
+            <text class="count">{{item.data.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-comment"></text>
+            <text class="count">{{item.data.commentCount}}</text>
+          </text>
+          <button class="item btn" open-type="share">
+            <text class="iconfont icon-dashujukeshihuaico-"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

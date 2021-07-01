@@ -1,0 +1,59 @@
+<view>
+  <!-- banner -->
+  <swiper class="block_banner" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33">
+    <swiper-item wx:for="{{bannerList}}" wx:key="bannerId">
+      <image src="{{item.pic}}"></image>
+    </swiper-item>
+  </swiper> 
+
+  <!-- nav -->
+  <view class="block_nav flex">
+    <view class="flexV" bindtap="goRecommendSong">
+      <text class="iconfont icon-tuijian"></text>
+      <text>推荐</text>
+    </view>
+    <view class="flexV" bindtap="goOther">
+      <text class="iconfont icon-paihangbang"></text>
+      <text>OtherPage</text>
+    </view>
+    <view class="flexV">
+      <text class="iconfont icon-gedan"></text>
+      <text>歌单</text>
+    </view>
+    <view class="flexV">
+      <text class="iconfont .icon-diantaizhibo"></text>
+      <text>电台</text>
+    </view>
+    <view class="flexV">
+      <text class="iconfont icon-zhibo"></text>
+      <text>直播</text>
+    </view>
+  </view>  
+
+  <!-- 推荐歌曲 -->
+  <view class="block_recommend">
+    <NavHeader title="推荐歌曲" subTitle="为您精心推荐"></NavHeader><!-- 分类导航组件 --> 
+    <scroll-view class="block_scroll flex" scroll-x enable-flex bindscroll="scroll">
+      <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id">
+        <image src="{{item.picUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 排行榜 -->
+  <view class="block_ranking">
+    <NavHeader title="排行榜" subTitle="热歌风向标"></NavHeader>
+    <swiper class="ranking" circular next-margin="50rpx">
+      <swiper-item wx:for="{{rankingList}}" wx:key="name">
+        <view class="title">{{item.name}}</view>
+        <view class="ranking_item flex" wx:for="{{item.tracks}}" wx:for-item="rankingItem" wx:key="id">
+          <image src="{{rankingItem.al.picUrl}}"></image>
+          <text class="count">{{index+1}}</text>
+          <text class="music">{{rankingItem.name}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>
