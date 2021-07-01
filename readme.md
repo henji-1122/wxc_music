@@ -1,1 +1,1 @@
-* 启动服务器：wxc_music_server根目录 ==> 执行npm start
+* 启动后台服务：wxc_music_server根目录 ==> 执行npm start
