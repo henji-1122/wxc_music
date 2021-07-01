@@ -1,10 +1,10 @@
-# 项目预览
+### 项目预览
 * 启动后台服务：wxc_music_server ==> 执行npm start
 
 
-# 小程序相关
+### 小程序相关
 
-## 1.  数据绑定
+#### 1.  数据绑定
 
 1. 小程序
    1. data中初始化数据
@@ -26,14 +26,14 @@
    3. 数据流： 
       1. 单项： Model ---> View
 
-## 2. 获取用户基本信息
+#### 2. 获取用户基本信息
 
 1. 用户未授权(首次登陆)
    1. button open-type=‘getUserInfo’
 2. 用户已经授权(再次登陆)
    1. wx.getUserInfo
 
-## 3. 前后端交互
+#### 3. 前后端交互
 
 1. 语法: wx.request()
 2. 注意点: 
@@ -42,7 +42,7 @@
    3. 并发限制上限是10个
    4. **开发过程中设置不校验合法域名**： 开发工具 ---> 右上角详情 ----> 本地设置 ---> 不校验
 
-## 4. 本地存储
+#### 4. 本地存储
 
 1. 语法: wx.setStorage() || wx.setStorageSync() || .....
 2. 注意点： 
@@ -50,15 +50,15 @@
    2. 单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB
    3. 属于永久存储，同H5的localStorage一样
 
-# 扩展内容
+### 扩展内容
 
-## 1. 事件流的三个阶段
+#### 1. 事件流的三个阶段
 
 1. 捕获: 从外向内
 2. 执行目标阶段
 3. 冒泡: 从内向外
 
-## 2. 事件委托
+#### 2. 事件委托
 
 1. 什么是事件委托
    1. 将子元素的事件委托(绑定)给父元素
@@ -75,7 +75,7 @@
    1. currentTarget要求绑定事件的元素一定是触发事件的元素
    2. target绑定事件的元素不一定是触发事件的元素
 
-## 3. 定义事件相关
+#### 3. 定义事件相关
 
 1. 分类
    1. 标准DOM事件
@@ -97,7 +97,7 @@
 
 
 
-# 获取用户唯一标识openid
+### 获取用户唯一标识openid
    * 官网：https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html
    * 通过 wx.login 接口获得临时登录凭证 code 后传到开发者服务器调用此接口完成登录流程(https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
    * 说明：
